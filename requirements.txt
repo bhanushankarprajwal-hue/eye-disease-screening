@@ -1,0 +1,11 @@
+# Tested with Python 3.11 on Windows. CPU is enough; a CUDA GPU is used automatically if available.
+torch>=2.3
+torchvision>=0.18
+streamlit>=1.45
+numpy
+pandas
+pillow
+matplotlib
+altair
+# only needed for the training scripts in Code/training/
+scikit-learn

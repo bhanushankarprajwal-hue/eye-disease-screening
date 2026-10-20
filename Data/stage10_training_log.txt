@@ -1,0 +1,72 @@
+DATA_ROOT: C:\Users\PRAJWAL\OneDrive\Desktop\Capstone Datasets
+Device   : cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images  train / val / test: 4472 960 960
+Patients shared between splits: 0
+Batches per epoch: 559
+ImageNet pre-trained: True
+Trainable parameters: 4017796
+Class weights: {'N': np.float64(0.36), 'D': np.float64(0.48), 'G': np.float64(1.14), 'C': np.float64(1.13), 'A': np.float64(1.18), 'H': np.float64(1.7), 'M': np.float64(1.27), 'O': np.float64(0.73)}
+Epoch  1 | loss 1.8961 | val acc 0.553 | val macro-F1 0.459  <- best, saved | 89s
+Epoch  2 | loss 1.6289 | val acc 0.650 | val macro-F1 0.560  <- best, saved | 68s
+Epoch  3 | loss 1.5411 | val acc 0.637 | val macro-F1 0.534 | 68s
+Epoch  4 | loss 1.4822 | val acc 0.669 | val macro-F1 0.611  <- best, saved | 68s
+Epoch  5 | loss 1.4291 | val acc 0.684 | val macro-F1 0.603 | 68s
+Epoch  6 | loss 1.3806 | val acc 0.688 | val macro-F1 0.609 | 68s
+Epoch  7 | loss 1.3362 | val acc 0.635 | val macro-F1 0.592 | 67s
+Epoch  8 | loss 1.2946 | val acc 0.656 | val macro-F1 0.599 | 76s
+Epoch  9 | loss 1.2457 | val acc 0.654 | val macro-F1 0.605 | 98s
+Epoch 10 | loss 1.1945 | val acc 0.702 | val macro-F1 0.630  <- best, saved | 113s
+Epoch 11 | loss 1.1652 | val acc 0.696 | val macro-F1 0.617 | 99s
+Epoch 12 | loss 1.1118 | val acc 0.703 | val macro-F1 0.623 | 119s
+Epoch 13 | loss 1.0734 | val acc 0.647 | val macro-F1 0.590 | 117s
+Epoch 14 | loss 1.0378 | val acc 0.675 | val macro-F1 0.611 | 117s
+Epoch 15 | loss 0.9948 | val acc 0.710 | val macro-F1 0.640  <- best, saved | 117s
+Epoch 16 | loss 0.9733 | val acc 0.686 | val macro-F1 0.617 | 118s
+Epoch 17 | loss 0.9592 | val acc 0.691 | val macro-F1 0.607 | 121s
+Epoch 18 | loss 0.9256 | val acc 0.700 | val macro-F1 0.625 | 117s
+Epoch 19 | loss 0.9055 | val acc 0.719 | val macro-F1 0.642  <- best, saved | 119s
+Epoch 20 | loss 0.9067 | val acc 0.704 | val macro-F1 0.637 | 122s
+Epoch 21 | loss 0.8930 | val acc 0.696 | val macro-F1 0.630 | 121s
+Epoch 22 | loss 0.8779 | val acc 0.715 | val macro-F1 0.645  <- best, saved | 121s
+Epoch 23 | loss 0.8783 | val acc 0.721 | val macro-F1 0.643 | 122s
+Epoch 24 | loss 0.8722 | val acc 0.713 | val macro-F1 0.643 | 119s
+Epoch 25 | loss 0.8777 | val acc 0.718 | val macro-F1 0.649  <- best, saved | 120s
+Training time: 42.6 min | best val macro-F1: 0.649
+Validation macro-F1 (with TTA): 0.642
+{'accuracy': 0.715, 'precision_macro': 0.656, 'recall_macro': 0.629, 'f1_macro': 0.635, 'f1_weighted': 0.709}
+
+              precision    recall  f1-score   support
+
+      Normal       0.73      0.83      0.77       432
+    Diabetes       0.80      0.64      0.71       241
+    Glaucoma       0.52      0.36      0.42        42
+    Cataract       0.76      0.89      0.82        44
+         AMD       0.58      0.62      0.60        40
+Hypertension       0.45      0.28      0.34        18
+      Myopia       0.84      0.86      0.85        36
+      Others       0.56      0.55      0.55       107
+
+    accuracy                           0.71       960
+   macro avg       0.66      0.63      0.64       960
+weighted avg       0.71      0.71      0.71       960
+
+     disease  test_images   auc  sensitivity  specificity  precision    f1
+      Normal          432 0.854        0.826        0.748      0.729 0.774
+    Diabetes          241 0.889        0.643        0.947      0.803 0.714
+    Glaucoma           42 0.791        0.357        0.985      0.517 0.423
+    Cataract           44 0.958        0.886        0.987      0.765 0.821
+         AMD           40 0.904        0.625        0.980      0.581 0.602
+Hypertension           18 0.714        0.278        0.994      0.455 0.345
+      Myopia           36 0.996        0.861        0.994      0.838 0.849
+      Others          107 0.859        0.551        0.945      0.557 0.554
+
+Mean AUC over 8 classes: 0.871
+                                                         val_f1_macro  accuracy  precision_macro  recall_macro  f1_macro  f1_weighted
+model                                                                                                                                
+Stage 9 — MobileNetV2, 224px, last 5 blocks (CPU)               0.486     0.498            0.454         0.553     0.481        0.509
+Stage 10 — EfficientNet-B0, 448px, full fine-tune (GPU)         0.642     0.715            0.656         0.629     0.635        0.709
+
+Selected by validation macro-F1: stage10
+Saved: Code/models/stage10_multiclass_efficientnet_b0.pt, Data/stage10_comparison.csv, Data/stage10_per_class.csv, Data/stage10_per_disease_yes_no.csv, Data/stage10_multiclass_config.json
+
+DONE -- Stage 10 finished.

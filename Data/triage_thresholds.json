@@ -1,0 +1,10 @@
+{
+  "thresholds": {
+    "refer_min_confidence": 0.3,
+    "normal_min_confidence": 0.7
+  },
+  "summary": "Calibrated on 1600 validation images (ODIR + RFMiD): refer if disease confidence >= 30%, likely normal if Normal confidence >= 70%. On 1600 unseen test images, 4.3% of diseased eyes fell in 'Likely normal'.",
+  "model": "Stage 13 + DenseNet-121 ensemble",
+  "miss_target": 0.05,
+  "refer_precision_target": 0.9
+}

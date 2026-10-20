@@ -1,0 +1,9 @@
+class,test_images,train_images,cnn_recall,cnn_precision,cnn_f1
+Normal,432,2009,0.815,0.738,0.774
+Diabetes,241,1125,0.676,0.791,0.729
+Glaucoma,42,200,0.357,0.625,0.455
+Cataract,44,204,0.886,0.75,0.812
+AMD,40,186,0.575,0.622,0.597
+Hypertension,18,90,0.333,0.353,0.343
+Myopia,36,162,0.861,0.861,0.861
+Others,107,496,0.561,0.541,0.55

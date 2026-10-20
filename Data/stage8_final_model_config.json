@@ -1,0 +1,19 @@
+{
+  "final_model": "finetuned_fusion",
+  "description": "Fine-tuned backbone fusion (Stage 8 Experiment B): MobileNetV2 backbone initialized from the Stage 6 checkpoint, last 5 feature blocks (14-18) fine-tuned jointly with the fusion head; single checkpoint contains everything.",
+  "unfreeze_from_block": 14,
+  "fusion_checkpoint": "Code/models/stage8_final_fusion_model.pt",
+  "threshold": 0.5000000000000001,
+  "test_metrics": {
+    "accuracy": 0.9742063492063492,
+    "precision_myopia": 0.7,
+    "recall_myopia": 0.84,
+    "f1_myopia": 0.7636363636363637,
+    "f1_macro": 0.8749976151864924
+  },
+  "clinical_scaler": {
+    "age_median": 59.0,
+    "age_mean": 57.871489361702125,
+    "age_std": 11.802581574568968
+  }
+}

@@ -1,0 +1,9 @@
+disease,rfmid_label,images,AUC Stage 10 (EfficientNet-B0 448px),AUC Stage 12 ensemble
+Normal,Disease_Risk=0,134,0.839,0.845
+Diabetes,DR,122,0.879,0.866
+Glaucoma,ODC,89,0.659,0.737
+Cataract,MH,101,0.679,0.749
+AMD,ARMD,30,0.841,0.876
+Hypertension,HR,1,0.414,0.554
+Myopia,MYA,27,0.693,0.755
+Others,other diseases,176,0.637,0.631

@@ -1,0 +1,63 @@
+Device : cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+RFMiD images used: train 835, val 275
+  RFMiD train per class: {'Normal': 397, 'Diabetes': 322, 'AMD': 67, 'Myopia': 49}
+  RFMiD val per class: {'Normal': 134, 'Diabetes': 104, 'AMD': 24, 'Myopia': 13}
+Near-duplicates of ODIR images found in rf_train: 1 (removed)
+Near-duplicates of ODIR images found in rf_val: 1 (removed)
+Duplicate check took 73s
+Training images: 5306 (ODIR 4472, RFMiD 834)
+Validation images: 1234 (ODIR 960, RFMiD 274)
+Starting from the Stage 10 weights: Code/models/stage10_multiclass_efficientnet_b0.pt
+Epoch  1 | loss 0.9945 | val acc 0.715 | val macro-F1 0.622  <- best, saved | 154s
+Epoch  2 | loss 0.9670 | val acc 0.737 | val macro-F1 0.638  <- best, saved | 168s
+Epoch  3 | loss 0.9556 | val acc 0.731 | val macro-F1 0.629 | 157s
+Epoch  4 | loss 0.9314 | val acc 0.738 | val macro-F1 0.639  <- best, saved | 166s
+Epoch  5 | loss 0.9268 | val acc 0.737 | val macro-F1 0.627 | 171s
+Epoch  6 | loss 0.9086 | val acc 0.747 | val macro-F1 0.633 | 170s
+Epoch  7 | loss 0.8942 | val acc 0.740 | val macro-F1 0.636 | 171s
+Epoch  8 | loss 0.8821 | val acc 0.754 | val macro-F1 0.645  <- best, saved | 172s
+Epoch  9 | loss 0.8789 | val acc 0.756 | val macro-F1 0.646  <- best, saved | 166s
+Epoch 10 | loss 0.8758 | val acc 0.744 | val macro-F1 0.640 | 167s
+Epoch 11 | loss 0.8650 | val acc 0.754 | val macro-F1 0.646  <- best, saved | 129s
+Epoch 12 | loss 0.8597 | val acc 0.750 | val macro-F1 0.642 | 91s
+Epoch 13 | loss 0.8586 | val acc 0.746 | val macro-F1 0.631 | 91s
+Epoch 14 | loss 0.8552 | val acc 0.754 | val macro-F1 0.646 | 91s
+Epoch 15 | loss 0.8542 | val acc 0.750 | val macro-F1 0.645 | 91s
+Training time: 35.9 min
+
+model                         Stage 10  Stage 12 ensemble  Stage 13 (ODIR+RFMiD)  Stage 13 + Stage 12 ensemble
+val_f1_macro (ODIR+RFMiD)        0.633              0.636                  0.647                         0.654
+ODIR test accuracy               0.715              0.718                  0.709                         0.720
+ODIR test macro-F1               0.635              0.640                  0.635                         0.655
+ODIR test mean AUC               0.871              0.912                  0.870                         0.913
+RFMiD normal-vs-abnormal AUC     0.834              0.840                  0.910                         0.895
+RFMiD mean AUC                   0.700              0.745                  0.755                         0.800
+RFMiD AUC Diabetes               0.878              0.863                  0.949                         0.938
+RFMiD AUC AMD                    0.829              0.872                  0.933                         0.926
+RFMiD AUC Myopia                 0.660              0.714                  0.916                         0.906
+RFMiD AUC Glaucoma               0.664              0.740                  0.695                         0.761
+RFMiD AUC Cataract               0.684              0.749                  0.730                         0.786
+
+Best on VALIDATION (ODIR + RFMiD): Stage 13 + Stage 12 ensemble
+
+ODIR test, Stage 13 + Stage 12 ensemble:
+
+              precision    recall  f1-score   support
+
+      Normal       0.74      0.81      0.77       432
+    Diabetes       0.79      0.67      0.72       241
+    Glaucoma       0.67      0.48      0.56        42
+    Cataract       0.79      0.84      0.81        44
+         AMD       0.69      0.60      0.64        40
+Hypertension       0.29      0.28      0.29        18
+      Myopia       0.91      0.89      0.90        36
+      Others       0.53      0.56      0.55       107
+
+    accuracy                           0.72       960
+   macro avg       0.68      0.64      0.65       960
+weighted avg       0.72      0.72      0.72       960
+
+
+Saved: Code\models\stage13_multiclass_efficientnet_b0_odir_rfmid.pt Data/stage13_*.csv/json, Data/multiclass_final_choice.json, Code/notebooks/stage13_training_curves.png
+
+DONE -- Stage 13 finished.

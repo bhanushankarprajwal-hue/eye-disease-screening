@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv*/
+.ipynb_checkpoints/
+
+# Large raw datasets (not part of the repo)
+datasets/
+preprocessed_images/
+ODIR-5K/
+external/
+IMAGES/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

@@ -1,0 +1,62 @@
+Device : cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images train/val/test: 4472 960 960 | patients shared between splits: 0
+Image size: 512 | batch: 6 | batches per epoch: 746 | max epochs: 40
+ImageNet pre-trained: True
+Epoch  1 | loss 1.9301 | val acc 0.529 | val macro-F1 0.427  <- best, saved | 308s
+Epoch  2 | loss 1.6554 | val acc 0.632 | val macro-F1 0.516  <- best, saved | 262s
+Epoch  3 | loss 1.5787 | val acc 0.625 | val macro-F1 0.508 | 275s
+Epoch  4 | loss 1.5119 | val acc 0.641 | val macro-F1 0.559  <- best, saved | 279s
+Epoch  5 | loss 1.4477 | val acc 0.664 | val macro-F1 0.600  <- best, saved | 279s
+Epoch  6 | loss 1.4011 | val acc 0.683 | val macro-F1 0.622  <- best, saved | 203s
+Epoch  7 | loss 1.3608 | val acc 0.688 | val macro-F1 0.599 | 188s
+Epoch  8 | loss 1.3314 | val acc 0.664 | val macro-F1 0.617 | 186s
+Epoch  9 | loss 1.2897 | val acc 0.692 | val macro-F1 0.620 | 185s
+Epoch 10 | loss 1.2391 | val acc 0.654 | val macro-F1 0.598 | 186s
+Epoch 11 | loss 1.2147 | val acc 0.670 | val macro-F1 0.618 | 185s
+Epoch 12 | loss 1.1828 | val acc 0.680 | val macro-F1 0.619 | 185s
+Epoch 13 | loss 1.1301 | val acc 0.669 | val macro-F1 0.600 | 185s
+Epoch 14 | loss 1.1088 | val acc 0.680 | val macro-F1 0.608 | 185s
+Epoch 15 | loss 1.0625 | val acc 0.677 | val macro-F1 0.615 | 185s
+Epoch 16 | loss 1.0312 | val acc 0.692 | val macro-F1 0.606 | 185s
+Early stopping: no validation improvement for 10 epochs
+Training time: 57.7 min | best val macro-F1 (no TTA): 0.622
+
+                                                          val_f1_macro  accuracy  precision_macro  recall_macro  f1_macro  f1_weighted  mean_auc
+model                                                                                                                                           
+Stage 10 - EfficientNet-B0, 448px                                0.643     0.715            0.656         0.629     0.635        0.709     0.871
+Stage 12 - EfficientNet-B0, 512px + contrast enhancement         0.619     0.649            0.616         0.627     0.606        0.656     0.898
+Stage 12 ensemble - average of Stage 10 and Stage 12             0.648     0.718            0.660         0.633     0.640        0.714     0.912
+
+Best on VALIDATION macro-F1: Stage 12 ensemble - average of Stage 10 and Stage 12
+
+Details for: Stage 12 ensemble - average of Stage 10 and Stage 12
+
+              precision    recall  f1-score   support
+
+      Normal       0.74      0.81      0.77       432
+    Diabetes       0.79      0.68      0.73       241
+    Glaucoma       0.62      0.36      0.45        42
+    Cataract       0.75      0.89      0.81        44
+         AMD       0.62      0.57      0.60        40
+Hypertension       0.35      0.33      0.34        18
+      Myopia       0.86      0.86      0.86        36
+      Others       0.54      0.56      0.55       107
+
+    accuracy                           0.72       960
+   macro avg       0.66      0.63      0.64       960
+weighted avg       0.72      0.72      0.71       960
+
+     disease  test_images   auc  sensitivity  specificity
+      Normal          432 0.864        0.815        0.763
+    Diabetes          241 0.895        0.676        0.940
+    Glaucoma           42 0.890        0.357        0.990
+    Cataract           44 0.970        0.886        0.986
+         AMD           40 0.915        0.575        0.985
+Hypertension           18 0.904        0.333        0.988
+      Myopia           36 0.995        0.861        0.995
+      Others          107 0.862        0.561        0.940
+Mean AUC: 0.912
+
+Saved: Code\models\stage12_multiclass_efficientnet_b0_512_enh.pt and Data/stage12_*.csv/json, Code/notebooks/stage12_*.png
+
+DONE -- Stage 12 finished.

@@ -1,0 +1,55 @@
+{
+  "name": "Stage 13 + Stage 12 ensemble",
+  "classes": [
+    "N",
+    "D",
+    "G",
+    "C",
+    "A",
+    "H",
+    "M",
+    "O"
+  ],
+  "class_names": {
+    "N": "Normal",
+    "D": "Diabetes",
+    "G": "Glaucoma",
+    "C": "Cataract",
+    "A": "AMD",
+    "H": "Hypertension",
+    "M": "Myopia",
+    "O": "Others"
+  },
+  "members": [
+    {
+      "architecture": "efficientnet_b0",
+      "img_size": 448,
+      "preprocess": "none",
+      "tta": true,
+      "checkpoint": "Code/models/stage13_multiclass_efficientnet_b0_odir_rfmid.pt"
+    },
+    {
+      "architecture": "efficientnet_b0",
+      "img_size": 512,
+      "preprocess": "ben_graham",
+      "tta": true,
+      "checkpoint": "Code/models/stage12_multiclass_efficientnet_b0_512_enh.pt"
+    }
+  ],
+  "architecture": "efficientnet_b0",
+  "img_size": 448,
+  "preprocess": "none",
+  "tta": true,
+  "checkpoint": "Code/models/stage13_multiclass_efficientnet_b0_odir_rfmid.pt",
+  "selection": "highest macro-F1 on combined ODIR + RFMiD validation images (Stage 13)",
+  "combined_val_f1_macro": 0.6539772050542361,
+  "per_class_csv": "Data/stage13_per_class.csv",
+  "epochs_run": 15,
+  "device_used": "cuda",
+  "test_metrics": {
+    "accuracy": 0.7197916666666667,
+    "f1_macro": 0.6548036366379123,
+    "mean_auc": 0.9133672984008134,
+    "rfmid_mean_auc": 0.7996267188089611
+  }
+}

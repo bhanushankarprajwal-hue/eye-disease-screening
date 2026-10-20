@@ -1,0 +1,4 @@
+Model,Accuracy,Precision (Myopia),Recall (Myopia),F1 (Myopia),F1 (macro),F1 (weighted)
+Random Forest,0.7477,0.0426,0.2889,0.0743,0.4641,0.8266
+Logistic Regression,0.595,0.0527,0.6222,0.0972,0.4181,0.7165
+SVM (RBF kernel),0.6012,0.0484,0.5556,0.089,0.4169,0.7218

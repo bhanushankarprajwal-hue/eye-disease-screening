@@ -1,0 +1,6 @@
+,Stage 10 (EfficientNet-B0 448px),Stage 12 ensemble
+Normal vs abnormal AUC,0.839,0.845
+Mean AUC (8 classes),0.705,0.752
+Single-label images,580.0,580.0
+Single-label accuracy,0.471,0.402
+Single-label macro-F1,0.367,0.329

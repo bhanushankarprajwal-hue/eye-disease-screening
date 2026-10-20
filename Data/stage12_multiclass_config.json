@@ -1,0 +1,52 @@
+{
+  "name": "Stage 12 ensemble - average of Stage 10 and Stage 12",
+  "classes": [
+    "N",
+    "D",
+    "G",
+    "C",
+    "A",
+    "H",
+    "M",
+    "O"
+  ],
+  "class_names": {
+    "N": "Normal",
+    "D": "Diabetes",
+    "G": "Glaucoma",
+    "C": "Cataract",
+    "A": "AMD",
+    "H": "Hypertension",
+    "M": "Myopia",
+    "O": "Others"
+  },
+  "members": [
+    {
+      "architecture": "efficientnet_b0",
+      "img_size": 512,
+      "preprocess": "ben_graham",
+      "tta": true,
+      "checkpoint": "Code/models/stage12_multiclass_efficientnet_b0_512_enh.pt"
+    },
+    {
+      "architecture": "efficientnet_b0",
+      "img_size": 448,
+      "preprocess": "none",
+      "tta": true,
+      "checkpoint": "Code/models/stage10_multiclass_efficientnet_b0.pt"
+    }
+  ],
+  "best_val_f1_macro": 0.6478634553186007,
+  "per_class_csv": "Data/stage12_per_class.csv",
+  "epochs_run": 16,
+  "device_used": "cuda",
+  "test_metrics": {
+    "accuracy": 0.7177083333333333,
+    "precision_macro": 0.6600527597910832,
+    "recall_macro": 0.6331077455043745,
+    "f1_macro": 0.640332369619145,
+    "f1_weighted": 0.7136923386329866,
+    "mean_auc": 0.9118467078863199
+  },
+  "checkpoint": "Code/models/stage12_multiclass_efficientnet_b0_512_enh.pt"
+}

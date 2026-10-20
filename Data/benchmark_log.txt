@@ -1,0 +1,204 @@
+
+======================================================================
+2026-10-15 15:34 | device: cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images train/val/test: 4472/960/960 (patient-level split, no overlap)
+Models to train: MobileNetV2, EfficientNet-B0, ResNet-50, DenseNet-121, VGG-16 (BN), ConvNeXt-Tiny, ViT-B/16 (Transformer)
+
+----- MobileNetV2  (384px, batch 16, lr 0.0003) -----
+Cached 6392 images at 384px in 80s
+  epoch  1 | loss 1.8575 | val acc 0.599 | val macro-F1 0.483  <- best, saved | 62s
+  epoch  2 | loss 1.6309 | val acc 0.608 | val macro-F1 0.477 | 58s
+  epoch  3 | loss 1.5572 | val acc 0.611 | val macro-F1 0.498  <- best, saved | 58s
+  epoch  4 | loss 1.5089 | val acc 0.581 | val macro-F1 0.549  <- best, saved | 60s
+  epoch  5 | loss 1.4467 | val acc 0.691 | val macro-F1 0.619  <- best, saved | 60s
+  epoch  6 | loss 1.4108 | val acc 0.686 | val macro-F1 0.621  <- best, saved | 59s
+  epoch  7 | loss 1.3550 | val acc 0.690 | val macro-F1 0.618 | 60s
+  epoch  8 | loss 1.3041 | val acc 0.696 | val macro-F1 0.621  <- best, saved | 60s
+  epoch  9 | loss 1.2494 | val acc 0.669 | val macro-F1 0.616 | 59s
+  epoch 10 | loss 1.2049 | val acc 0.705 | val macro-F1 0.629  <- best, saved | 58s
+  epoch 11 | loss 1.1756 | val acc 0.697 | val macro-F1 0.635  <- best, saved | 58s
+  epoch 12 | loss 1.1547 | val acc 0.704 | val macro-F1 0.640  <- best, saved | 59s
+  TEST: accuracy 0.706 | macro-F1 0.653 | mean AUC 0.908 | 2.2M params | 8.9 ms/photo | 12 min
+
+----- EfficientNet-B0  (384px, batch 16, lr 0.0003) -----
+  epoch  1 | loss 1.8910 | val acc 0.566 | val macro-F1 0.496  <- best, saved | 47s
+  epoch  2 | loss 1.5779 | val acc 0.574 | val macro-F1 0.532  <- best, saved | 42s
+  epoch  3 | loss 1.4724 | val acc 0.648 | val macro-F1 0.569  <- best, saved | 42s
+  epoch  4 | loss 1.3886 | val acc 0.660 | val macro-F1 0.581  <- best, saved | 45s
+  epoch  5 | loss 1.3160 | val acc 0.665 | val macro-F1 0.589  <- best, saved | 62s
+  epoch  6 | loss 1.2485 | val acc 0.677 | val macro-F1 0.606  <- best, saved | 63s
+  epoch  7 | loss 1.1815 | val acc 0.678 | val macro-F1 0.612  <- best, saved | 62s
+  epoch  8 | loss 1.1224 | val acc 0.678 | val macro-F1 0.621  <- best, saved | 63s
+  epoch  9 | loss 1.0791 | val acc 0.676 | val macro-F1 0.611 | 63s
+  epoch 10 | loss 1.0424 | val acc 0.662 | val macro-F1 0.598 | 63s
+  epoch 11 | loss 1.0244 | val acc 0.661 | val macro-F1 0.591 | 57s
+  epoch 12 | loss 1.0025 | val acc 0.669 | val macro-F1 0.599 | 63s
+  early stop (no improvement for 4 epochs)
+  TEST: accuracy 0.689 | macro-F1 0.609 | mean AUC 0.901 | 4.0M params | 13.0 ms/photo | 11 min
+
+----- ResNet-50  (384px, batch 16, lr 0.0003) -----
+  epoch  1 | loss 1.8585 | val acc 0.515 | val macro-F1 0.382  <- best, saved | 79s
+  epoch  2 | loss 1.7147 | val acc 0.536 | val macro-F1 0.445  <- best, saved | 79s
+  epoch  3 | loss 1.6405 | val acc 0.575 | val macro-F1 0.423 | 80s
+  epoch  4 | loss 1.5928 | val acc 0.649 | val macro-F1 0.550  <- best, saved | 79s
+  epoch  5 | loss 1.5516 | val acc 0.654 | val macro-F1 0.550  <- best, saved | 79s
+  epoch  6 | loss 1.5119 | val acc 0.624 | val macro-F1 0.544 | 80s
+  epoch  7 | loss 1.4591 | val acc 0.672 | val macro-F1 0.599  <- best, saved | 80s
+  epoch  8 | loss 1.4084 | val acc 0.700 | val macro-F1 0.597 | 79s
+  epoch  9 | loss 1.3590 | val acc 0.675 | val macro-F1 0.563 | 80s
+  epoch 10 | loss 1.3144 | val acc 0.694 | val macro-F1 0.604  <- best, saved | 80s
+  epoch 11 | loss 1.2687 | val acc 0.688 | val macro-F1 0.615  <- best, saved | 79s
+  epoch 12 | loss 1.2418 | val acc 0.701 | val macro-F1 0.624  <- best, saved | 79s
+  TEST: accuracy 0.697 | macro-F1 0.642 | mean AUC 0.913 | 23.5M params | 10.4 ms/photo | 16 min
+
+----- DenseNet-121  (384px, batch 12, lr 0.0003) -----
+  epoch  1 | loss 1.8500 | val acc 0.571 | val macro-F1 0.468  <- best, saved | 90s
+  epoch  2 | loss 1.6476 | val acc 0.597 | val macro-F1 0.479  <- best, saved | 88s
+  epoch  3 | loss 1.5904 | val acc 0.603 | val macro-F1 0.467 | 89s
+  epoch  4 | loss 1.5433 | val acc 0.637 | val macro-F1 0.566  <- best, saved | 90s
+  epoch  5 | loss 1.4892 | val acc 0.661 | val macro-F1 0.568  <- best, saved | 88s
+  epoch  6 | loss 1.4346 | val acc 0.672 | val macro-F1 0.591  <- best, saved | 89s
+  epoch  7 | loss 1.3913 | val acc 0.710 | val macro-F1 0.633  <- best, saved | 87s
+  epoch  8 | loss 1.3263 | val acc 0.715 | val macro-F1 0.613 | 90s
+  epoch  9 | loss 1.2695 | val acc 0.697 | val macro-F1 0.625 | 87s
+  epoch 10 | loss 1.2120 | val acc 0.719 | val macro-F1 0.645  <- best, saved | 90s
+  epoch 11 | loss 1.1669 | val acc 0.710 | val macro-F1 0.629 | 87s
+  epoch 12 | loss 1.1455 | val acc 0.711 | val macro-F1 0.628 | 88s
+  TEST: accuracy 0.728 | macro-F1 0.652 | mean AUC 0.926 | 7.0M params | 27.3 ms/photo | 18 min
+
+----- VGG-16 (BN)  (384px, batch 8, lr 0.0001) -----
+
+======================================================================
+2026-10-15 17:03 | device: cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images train/val/test: 4472/960/960 (patient-level split, no overlap)
+Models to train: VGG-16 (BN), ConvNeXt-Tiny, ViT-B/16 (Transformer)
+Cached 6392 images at 384px in 95s
+
+----- VGG-16 (BN)  (384px, 4472 training photos, batch 8, lr 0.0001) -----
+
+======================================================================
+2026-10-15 17:08 | device: cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images train/val/test: 4472/960/960 (patient-level split, no overlap)
+Models to train: VGG-16 (BN), ConvNeXt-Tiny, ViT-B/16 (Transformer)
+Cached 6392 images at 384px in 20s
+
+----- VGG-16 (BN)  (384px, 4472 training photos, batch 8, lr 0.0001) -----
+
+======================================================================
+2026-10-15 17:20 | device: cuda | NVIDIA GeForce RTX 4060 Laptop GPU
+Images train/val/test: 4472/960/960 (patient-level split, no overlap)
+Models to train: VGG-16 (BN), ConvNeXt-Tiny, ViT-B/16 (Transformer)
+Cached 6392 images at 384px in 33s
+
+----- VGG-16 (BN)  (384px, 4472 training photos, batch 8, lr 0.0001) -----
+  epoch  1 | loss 1.9021 | val acc 0.605 | val macro-F1 0.379  <- best, saved | 168s
+  epoch  2 | loss 1.6908 | val acc 0.619 | val macro-F1 0.480  <- best, saved | 171s
+  epoch  3 | loss 1.5862 | val acc 0.652 | val macro-F1 0.527  <- best, saved | 169s
+  epoch  4 | loss 1.5242 | val acc 0.604 | val macro-F1 0.511 | 167s
+  epoch  5 | loss 1.4773 | val acc 0.676 | val macro-F1 0.563  <- best, saved | 167s
+  epoch  6 | loss 1.4079 | val acc 0.694 | val macro-F1 0.581  <- best, saved | 167s
+  epoch  7 | loss 1.3519 | val acc 0.693 | val macro-F1 0.613  <- best, saved | 166s
+  epoch  8 | loss 1.2851 | val acc 0.706 | val macro-F1 0.593 | 167s
+  epoch  9 | loss 1.2152 | val acc 0.693 | val macro-F1 0.607 | 168s
+  epoch 10 | loss 1.1677 | val acc 0.719 | val macro-F1 0.608 | 166s
+  epoch 11 | loss 1.1397 | val acc 0.719 | val macro-F1 0.614  <- best, saved | 167s
+  epoch 12 | loss 1.1190 | val acc 0.721 | val macro-F1 0.614  <- best, saved | 166s
+  TEST: accuracy 0.725 | macro-F1 0.659 | mean AUC 0.912 | 134.3M params | 6.2 ms/photo | 33 min
+
+----- ConvNeXt-Tiny  (384px, 4472 training photos, batch 12, lr 0.0001) -----
+  epoch  1 | loss 1.8501 | val acc 0.620 | val macro-F1 0.480  <- best, saved | 86s
+  epoch  2 | loss 1.5599 | val acc 0.668 | val macro-F1 0.555  <- best, saved | 86s
+  epoch  3 | loss 1.4267 | val acc 0.697 | val macro-F1 0.583  <- best, saved | 85s
+  epoch  4 | loss 1.3344 | val acc 0.661 | val macro-F1 0.596  <- best, saved | 85s
+  epoch  5 | loss 1.2655 | val acc 0.670 | val macro-F1 0.612  <- best, saved | 86s
+  epoch  6 | loss 1.1794 | val acc 0.714 | val macro-F1 0.643  <- best, saved | 85s
+  epoch  7 | loss 1.0896 | val acc 0.704 | val macro-F1 0.623 | 85s
+  epoch  8 | loss 1.0259 | val acc 0.718 | val macro-F1 0.645  <- best, saved | 86s
+  epoch  9 | loss 0.9708 | val acc 0.702 | val macro-F1 0.626 | 85s
+  epoch 10 | loss 0.9292 | val acc 0.713 | val macro-F1 0.639 | 86s
+  epoch 11 | loss 0.9154 | val acc 0.706 | val macro-F1 0.630 | 85s
+  epoch 12 | loss 0.8974 | val acc 0.704 | val macro-F1 0.627 | 85s
+  early stop (no improvement for 4 epochs)
+  TEST: accuracy 0.730 | macro-F1 0.639 | mean AUC 0.917 | 27.8M params | 9.4 ms/photo | 17 min
+Cached 6392 images at 224px in 36s
+
+----- ViT-B/16 (Transformer)  (224px, 4472 training photos, batch 16, lr 5e-05) -----
+  epoch  1 | loss 1.8338 | val acc 0.483 | val macro-F1 0.436  <- best, saved | 56s
+  epoch  2 | loss 1.6580 | val acc 0.540 | val macro-F1 0.449  <- best, saved | 59s
+  epoch  3 | loss 1.5797 | val acc 0.588 | val macro-F1 0.478  <- best, saved | 60s
+  epoch  4 | loss 1.5074 | val acc 0.529 | val macro-F1 0.525  <- best, saved | 60s
+  epoch  5 | loss 1.4560 | val acc 0.559 | val macro-F1 0.500 | 58s
+  epoch  6 | loss 1.3670 | val acc 0.619 | val macro-F1 0.558  <- best, saved | 58s
+  epoch  7 | loss 1.2948 | val acc 0.619 | val macro-F1 0.567  <- best, saved | 59s
+  epoch  8 | loss 1.2145 | val acc 0.622 | val macro-F1 0.570  <- best, saved | 59s
+  epoch  9 | loss 1.1321 | val acc 0.609 | val macro-F1 0.562 | 58s
+  epoch 10 | loss 1.0618 | val acc 0.608 | val macro-F1 0.547 | 58s
+  epoch 11 | loss 1.0211 | val acc 0.606 | val macro-F1 0.548 | 56s
+  epoch 12 | loss 0.9975 | val acc 0.607 | val macro-F1 0.549 | 50s
+  early stop (no improvement for 4 epochs)
+  TEST: accuracy 0.640 | macro-F1 0.577 | mean AUC 0.880 | 85.8M params | 4.6 ms/photo | 11 min
+
+----- EfficientNet-B0 25pct  (384px, 1127 training photos, batch 16, lr 0.0003) -----
+  epoch  1 | loss 2.0655 | val acc 0.495 | val macro-F1 0.364  <- best, saved | 12s
+  epoch  2 | loss 1.7334 | val acc 0.555 | val macro-F1 0.454  <- best, saved | 12s
+  epoch  3 | loss 1.5682 | val acc 0.564 | val macro-F1 0.490  <- best, saved | 12s
+  epoch  4 | loss 1.4266 | val acc 0.542 | val macro-F1 0.464 | 12s
+  epoch  5 | loss 1.3265 | val acc 0.584 | val macro-F1 0.517  <- best, saved | 12s
+  epoch  6 | loss 1.2212 | val acc 0.588 | val macro-F1 0.513 | 12s
+  epoch  7 | loss 1.1636 | val acc 0.584 | val macro-F1 0.516 | 12s
+  epoch  8 | loss 1.1006 | val acc 0.594 | val macro-F1 0.512 | 12s
+  epoch  9 | loss 1.0379 | val acc 0.585 | val macro-F1 0.514 | 12s
+  early stop (no improvement for 4 epochs)
+  TEST: accuracy 0.593 | macro-F1 0.515 | mean AUC 0.850 | 4.0M params | 5.8 ms/photo | 2 min
+
+----- EfficientNet-B0 50pct  (384px, 2242 training photos, batch 16, lr 0.0003) -----
+  epoch  1 | loss 1.9753 | val acc 0.547 | val macro-F1 0.424  <- best, saved | 22s
+  epoch  2 | loss 1.6733 | val acc 0.609 | val macro-F1 0.509  <- best, saved | 22s
+  epoch  3 | loss 1.5298 | val acc 0.606 | val macro-F1 0.538  <- best, saved | 33s
+  epoch  4 | loss 1.4203 | val acc 0.640 | val macro-F1 0.565  <- best, saved | 33s
+  epoch  5 | loss 1.3259 | val acc 0.641 | val macro-F1 0.570  <- best, saved | 28s
+  epoch  6 | loss 1.2558 | val acc 0.632 | val macro-F1 0.560 | 22s
+  epoch  7 | loss 1.1680 | val acc 0.662 | val macro-F1 0.590  <- best, saved | 22s
+  epoch  8 | loss 1.1096 | val acc 0.668 | val macro-F1 0.595  <- best, saved | 22s
+  epoch  9 | loss 1.0513 | val acc 0.679 | val macro-F1 0.600  <- best, saved | 22s
+  epoch 10 | loss 1.0246 | val acc 0.677 | val macro-F1 0.586 | 22s
+  epoch 11 | loss 1.0149 | val acc 0.679 | val macro-F1 0.592 | 22s
+  epoch 12 | loss 0.9997 | val acc 0.672 | val macro-F1 0.592 | 22s
+  TEST: accuracy 0.667 | macro-F1 0.588 | mean AUC 0.882 | 4.0M params | 5.8 ms/photo | 5 min
+
+----- EfficientNet-B0 75pct  (384px, 3354 training photos, batch 16, lr 0.0003) -----
+  epoch  1 | loss 1.9252 | val acc 0.539 | val macro-F1 0.433  <- best, saved | 32s
+  epoch  2 | loss 1.6189 | val acc 0.646 | val macro-F1 0.563  <- best, saved | 31s
+  epoch  3 | loss 1.4881 | val acc 0.655 | val macro-F1 0.589  <- best, saved | 32s
+  epoch  4 | loss 1.4185 | val acc 0.654 | val macro-F1 0.574 | 32s
+  epoch  5 | loss 1.3284 | val acc 0.636 | val macro-F1 0.594  <- best, saved | 31s
+  epoch  6 | loss 1.2444 | val acc 0.675 | val macro-F1 0.613  <- best, saved | 31s
+  epoch  7 | loss 1.1717 | val acc 0.689 | val macro-F1 0.604 | 31s
+  epoch  8 | loss 1.1271 | val acc 0.676 | val macro-F1 0.613  <- best, saved | 31s
+  epoch  9 | loss 1.0653 | val acc 0.679 | val macro-F1 0.610 | 31s
+  epoch 10 | loss 1.0219 | val acc 0.692 | val macro-F1 0.602 | 31s
+  epoch 11 | loss 1.0240 | val acc 0.688 | val macro-F1 0.606 | 31s
+  epoch 12 | loss 1.0193 | val acc 0.695 | val macro-F1 0.608 | 31s
+  early stop (no improvement for 4 epochs)
+  TEST: accuracy 0.684 | macro-F1 0.622 | mean AUC 0.898 | 4.0M params | 6.1 ms/photo | 6 min
+
+LEARNING CURVE (EfficientNet-B0, same 960 test photos):
+fraction  train_photos  test_accuracy  test_f1_macro  test_mean_auc
+    0.25        1127.0          0.593          0.515          0.850
+     0.5        2242.0          0.667          0.588          0.882
+    0.75        3354.0          0.684          0.622          0.898
+     1.0           NaN          0.689          0.609          0.901
+
+RESULTS on the same 960 test photos (sorted by macro-F1):
+                                  model  img_size  params_M  test_accuracy  test_f1_macro  test_mean_auc ms_per_image train_minutes
+                            VGG-16 (BN)     384.0     134.3          0.725          0.659          0.912          6.2          33.5
+OUR FINAL: Stage 13 + Stage 12 ensemble 448 + 512       8.0          0.720          0.655          0.913                           
+                            MobileNetV2     384.0       2.2          0.706          0.653          0.908          8.9          11.8
+                           DenseNet-121     384.0       7.0          0.728          0.652          0.926         27.3          17.7
+                              ResNet-50     384.0      23.5          0.697          0.642          0.913         10.4          15.9
+                          ConvNeXt-Tiny     384.0      27.8          0.730          0.639          0.917          9.4          17.1
+                        EfficientNet-B0     384.0       4.0          0.689          0.609          0.901         13.0          11.2
+                 ViT-B/16 (Transformer)     224.0      85.8          0.640          0.577          0.880          4.6          11.5
+
+Saved: C:\Users\PRAJWAL\OneDrive\Desktop\Capstone Datasets\Data\benchmark_results.csv and Code/notebooks/benchmark_chart.png
+DONE -- benchmark finished.

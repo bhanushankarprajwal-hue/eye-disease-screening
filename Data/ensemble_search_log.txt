@@ -1,0 +1,21 @@
+Device: cuda
+Current model: Stage 13 + Stage 12 ensemble
+Networks available: S13, S12, DenseNet-121, ConvNeXt-Tiny
+Validation 1235 (ODIR + RFMiD) | ODIR test 960 | RFMiD test 640
+  S13: done
+  S12: done
+  DenseNet-121: done
+  ConvNeXt-Tiny: done
+
+                                          networks  val_f1_macro (ODIR+RFMiD)  ODIR test accuracy  ODIR test macro-F1  ODIR test mean AUC  RFMiD mean AUC  RFMiD AUC Myopia
+combination                                                                                                                                                                
+Current (S13 + S12)                              2                      0.654               0.720               0.655               0.913           0.800             0.906
+S13 + S12 + DenseNet-121                         3                      0.660               0.726               0.664               0.930           0.788             0.936
+S13 + DenseNet-121                               2                      0.675               0.727               0.666               0.928           0.771             0.947
+S13 + S12 + ConvNeXt-Tiny                        3                      0.665               0.732               0.664               0.929           0.796             0.900
+S13 + S12 + DenseNet-121 + ConvNeXt-Tiny         4                      0.668               0.740               0.676               0.936           0.787             0.931
+
+Best on VALIDATION: S13 + DenseNet-121 (gain +0.0211 over the current model)
+DECISION: the app now uses 'Stage 13 + DenseNet-121 ensemble'.
+NEXT: run  python Code\calibrate_triage.py  so the batch-screening limits match the new model.
+DONE -- ensemble search finished.

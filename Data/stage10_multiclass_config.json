@@ -1,0 +1,37 @@
+{
+  "classes": [
+    "N",
+    "D",
+    "G",
+    "C",
+    "A",
+    "H",
+    "M",
+    "O"
+  ],
+  "class_names": {
+    "N": "Normal",
+    "D": "Diabetes",
+    "G": "Glaucoma",
+    "C": "Cataract",
+    "A": "AMD",
+    "H": "Hypertension",
+    "M": "Myopia",
+    "O": "Others"
+  },
+  "architecture": "efficientnet_b0",
+  "img_size": 448,
+  "checkpoint": "Code/models/stage10_multiclass_efficientnet_b0.pt",
+  "tta": true,
+  "best_val_f1_macro": 0.6416374003747727,
+  "epochs_run": 25,
+  "device_used": "cuda",
+  "per_class_csv": "Data/stage10_per_class.csv",
+  "test_metrics": {
+    "accuracy": 0.7145833333333333,
+    "precision_macro": 0.6555012391662847,
+    "recall_macro": 0.6285424584267629,
+    "f1_macro": 0.6353524914288756,
+    "f1_weighted": 0.7090766364787725
+  }
+}

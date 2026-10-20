@@ -1,0 +1,53 @@
+{
+  "name": "Stage 13 + DenseNet-121 ensemble",
+  "classes": [
+    "N",
+    "D",
+    "G",
+    "C",
+    "A",
+    "H",
+    "M",
+    "O"
+  ],
+  "class_names": {
+    "N": "Normal",
+    "D": "Diabetes",
+    "G": "Glaucoma",
+    "C": "Cataract",
+    "A": "AMD",
+    "H": "Hypertension",
+    "M": "Myopia",
+    "O": "Others"
+  },
+  "members": [
+    {
+      "architecture": "efficientnet_b0",
+      "img_size": 448,
+      "preprocess": "none",
+      "tta": true,
+      "checkpoint": "Code/models/stage13_multiclass_efficientnet_b0_odir_rfmid.pt"
+    },
+    {
+      "architecture": "densenet121",
+      "img_size": 384,
+      "preprocess": "none",
+      "tta": true,
+      "checkpoint": "Code/models/benchmark_densenet121.pt"
+    }
+  ],
+  "architecture": "efficientnet_b0",
+  "img_size": 448,
+  "preprocess": "none",
+  "tta": true,
+  "checkpoint": "Code/models/stage13_multiclass_efficientnet_b0_odir_rfmid.pt",
+  "selection": "highest macro-F1 on combined ODIR + RFMiD validation images (ensemble search, Stage 14)",
+  "combined_val_f1_macro": 0.6751147948959837,
+  "per_class_csv": "Data/stage14_per_class.csv",
+  "test_metrics": {
+    "accuracy": 0.7270833333333333,
+    "f1_macro": 0.6663699519982622,
+    "mean_auc": 0.928116034739028,
+    "rfmid_mean_auc": 0.7710455893068858
+  }
+}

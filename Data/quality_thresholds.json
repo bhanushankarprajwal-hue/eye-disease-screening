@@ -1,0 +1,13 @@
+{
+  "thresholds": {
+    "min_fundus_area": 0.15,
+    "min_brightness": 36.5367,
+    "max_saturated": 0.146,
+    "min_redness": 0.9984,
+    "max_corner": 60.0,
+    "min_detail": 0.9772,
+    "max_uneven": 0.5151
+  },
+  "calibrated_on": "9496 usable photos (ODIR raw + RFMiD train/val)",
+  "rule": "retake limits = 0.5th/99.5th percentile of usable photos; warning limits = 5th/95th"
+}
